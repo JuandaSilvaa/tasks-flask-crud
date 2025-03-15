@@ -13,7 +13,7 @@ def test_create_task():
     }
     response = requests.post(f"{BASE_URL}/tasks", json=new_task_data)
     # Onde faz de fato a validação confere se e 200
-    assert response.status_code == 200
+    assert response.status_code == 201
     response_json = response.json()
     assert "message" in response_json
     assert "id" in response_json
